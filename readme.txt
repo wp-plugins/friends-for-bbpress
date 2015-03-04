@@ -10,6 +10,8 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+This plugin allows users to add friends on bbPress forums.
+
 == Description ==
 
 The Friends For bbPress plugin allows users to add friends on their bbPress forums. This plugin creates a section on each user’s profile page that contains that users friend’s. Adding a friend is easy, just visit their profile and click the ‘Add Friend’ button. Once you have added a friend, they need to accept your request. To see your friend requests, visit your profile. Once your request has been accepted, you will be able to see when your new friend is online or offline. You will also be able to see who they are friends with.
@@ -23,22 +25,22 @@ The Friends For bbPress plugin allows users to add friends on their bbPress foru
 == Screenshots ==
 
 1. Sign in
-'/assets/signIn'
+signIn.png
 
 2. Add a friend
-'/assets/addFriend'
+addFriend.png
 
 3. Waiting for request to be accepted
-'/assets/pendingApproval'
+pendingApproval.png
 
 4. Friend accepts request
-'/assets/acceptFriendship'
+acceptFriendship.png
 
 5. Remove friend
-'/assets/removeFriend'
+removeFriend.png
 
 6. Your friends
-'/assets/yourFriends'
+yourFriends.png
 
 
 == Frequently Asked Questions ==
