@@ -34,22 +34,16 @@ If the user has accepted the request, simply click the ‘Remove Friend’ butto
 == Screenshots ==
 
 1. Sign in
-signIn.png
 
 2. Add a friend
-addFriend.png
 
 3. Waiting for request to be accepted
-pendingApproval.png
 
 4. Friend accepts request
-acceptFriendship.png
 
 5. Remove friend
-removeFriend.png
 
 6. Your friends
-yourFriends.png
 
 
 == Changelog ==
