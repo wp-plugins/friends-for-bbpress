@@ -1,4 +1,4 @@
-=== FRIENDS FOR BBPRESS PLUGIN ===
+=== Friends For bbPress ===
 Created by GraemeScott
 
 Contributors: GraemeScott
@@ -9,8 +9,6 @@ Tested up to: 4.1
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-This plugin allows users to add friends on bbPress forums.
 
 == Description ==
 
@@ -24,7 +22,7 @@ The Friends For bbPress plugin allows users to add friends on their bbPress foru
 
 == Screenshots ==
 
-1. Sign into our profile
+1. Sign in
 '/assets/signIn'
 
 2. Add a friend
