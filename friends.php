@@ -30,12 +30,19 @@
 		$current_user = wp_get_current_user();
 		$friends = get_users();
 
-		$request = sanitize_text_field($_POST['request']);
-		$cancel = sanitize_text_field($_POST['cancel']);
-		$accept = sanitize_text_field($_POST['accept']);
-		$decline = sanitize_text_field($_POST['decline']);
-		$remove = sanitize_text_field($_POST['remove']);
-		$friend_id = sanitize_text_field($_POST['id']);
+		$request = '';
+		$cancel = '';
+		$accept = '';
+		$decline = '';
+		$remove = '';
+		$friend_id = '';
+
+		if(isset($_POST['request'])){ $request = sanitize_text_field($_POST['request']); }
+		if(isset($_POST['cancel'])){ $cancel = sanitize_text_field($_POST['cancel']); }
+		if(isset($_POST['accept'])){ $accept = sanitize_text_field($_POST['accept']); }
+		if(isset($_POST['decline'])){ $decline = sanitize_text_field($_POST['decline']); }
+		if(isset($_POST['remove'])){ $remove = sanitize_text_field($_POST['remove']); }
+		if(isset($_POST['id'])){ $friend_id = sanitize_text_field($_POST['id']); }
 		
 		$friendsList = get_user_meta( $current_user->ID, 'friends_list', true);
 		$currentFriendsList = get_user_meta( $friend_id, 'friends_list', true);
@@ -162,6 +169,10 @@
 			}
 		
 			$friendsList = get_user_meta( $user_page, 'friends_list', true);
+
+			if (!$friendsList) {
+				$friendsList = array();
+			}
 		
 			if(in_array($current_user->ID, $friendsList) || $user_page == $current_user->ID) {
 				echo '<h2 class="entry-title">Friends</h2>';
@@ -229,8 +240,10 @@
 				
 				foreach($friends as $friend) {
 					$requestList = get_user_meta( $friend->ID, 'request_list', true);
-					if (in_array($current_user->ID, $requestList)) {
-						$friendRequests[] = $friend;
+					if ($requestList) {
+						if (in_array($current_user->ID, $requestList)) {
+							$friendRequests[] = $friend;
+						}
 					}
 				}
 			
