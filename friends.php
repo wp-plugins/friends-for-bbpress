@@ -3,7 +3,7 @@
 	/**
 	 * Plugin Name: Friends For bbPress
 	 * Description: Add friends in bbPress
-	 * Version: 1.0
+	 * Version: 1.1
 	 * Author: Graeme Scott
 	 */
 	

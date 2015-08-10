@@ -5,7 +5,7 @@ Contributors: GraemeScott
 Donate link: http://gscodesign.com
 Tags: friends, bbpress
 Requires at least: 3.4
-Tested up to: 4.1
+Tested up to: 4.2.4
 Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -53,6 +53,7 @@ If the user has accepted the request, simply click the ‘Remove Friend’ butto
 
 = 1.1 =
 * Fixed various bugs
+* Tested on Wordpress 4.2.4
 
 
 == Upgrade Notice ==
@@ -62,3 +63,4 @@ If the user has accepted the request, simply click the ‘Remove Friend’ butto
 
 = 1.1 =
 * Fixed various bugs
+* Tested on Wordpress 4.2.4
