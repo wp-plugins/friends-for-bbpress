@@ -2,12 +2,12 @@
 
 	/**
 	 * Plugin Name: Friends For bbPress
-	 * Description: Add friends in bbPress
-	 * Version: 1.1
+	 * Description: Allows users to add friends on bbPress forums
+	 * Version: 1.3
 	 * Author: Graeme Scott
 	 */
 	
-	function update_online_users_status(){
+	function f4bbp_update_online_users_status(){
 		
 		if(is_user_logged_in()){
 
@@ -24,9 +24,9 @@
 		}
 	}
 	
-	add_action('wp', 'update_online_users_status');
+	add_action('wp', 'f4bbp_update_online_users_status');
 	
-	function bbpress_friends()	{
+	function f4bbp_bbpress_friends()	{
 		$current_user = wp_get_current_user();
 		$friends = get_users();
 
@@ -51,7 +51,7 @@
 		if ($request) {
 			if(empty($requestList)) {
 				$newList = array($friend_id);
-				add_user_meta( $current_user->ID, 'request_list', $newList);
+				update_user_meta( $current_user->ID, 'request_list', $newList);
 			} else {
 				array_unshift($requestList, $friend_id);
 				update_user_meta( $current_user->ID, 'request_list', $requestList);
@@ -75,7 +75,7 @@
 			
 			if(empty($friendsList)) {
 				$newList = array($friend_id);
-				add_user_meta( $current_user->ID, 'friends_list', $newList);
+				update_user_meta( $current_user->ID, 'friends_list', $newList);
 			} else {
 				array_unshift($friendsList, $friend_id);
 				update_user_meta( $current_user->ID, 'friends_list', $friendsList);
@@ -83,7 +83,7 @@
 			
 			if(empty($currentFriendsList)) {
 				$newList = array($current_user->ID);
-				add_user_meta( $friend_id, 'friends_list', $newList);
+				update_user_meta( $friend_id, 'friends_list', $newList);
 			} else {
 				array_unshift($currentFriendsList, $current_user->ID);
 				update_user_meta( $friend_id, 'friends_list', $currentFriendsList);
@@ -136,8 +136,6 @@
 	        }
 		} 
 		
-		update_user_meta( $current_user->ID, 'friends_list', $friendsList);
-		
 		$friendsList = get_user_meta( $current_user->ID, 'friends_list', true);
 		$requestList = get_user_meta( $current_user->ID, 'request_list', true);
 		
@@ -180,7 +178,7 @@
 				$online = array();
 				$offline = array();
 				
-				function is_user_online($user_id) {
+				function f4bbp_is_user_online($user_id) {
 				  $logged_in_users = get_transient('users_online');
 				  return isset($logged_in_users[$user_id]) && ($logged_in_users[$user_id] > (current_time('timestamp') - (15 * 60)));
 				}
@@ -189,7 +187,7 @@
 					
 					foreach($friendsList as $friend) {
 						$friend = get_userdata($friend);
-						if (is_user_online($friend->ID)) {
+						if (f4bbp_is_user_online($friend->ID)) {
 							$online[] = $friend;
 						} else {
 							$offline[] = $friend;
@@ -199,7 +197,7 @@
 					if($online) {
 						echo '<p>Online:</p>';
 						foreach($online as $friend) {
-							if (is_user_online($friend->ID)) {
+							if (f4bbp_is_user_online($friend->ID)) {
 								echo '<div style="display: inline-block; padding-right: 10px;" align="center">';
 									echo '<a href="' . bbp_get_user_profile_url( $friend->ID ) . '">' . get_avatar( $friend->ID, '48' ) . '</a>';
 									echo '<br>';
@@ -270,6 +268,6 @@
 		}
 	}
 	
-	add_action( 'bbp_template_after_user_profile', 'bbpress_friends' );
+	add_action( 'bbp_template_after_user_profile', 'f4bbp_bbpress_friends' );
 
 ?>

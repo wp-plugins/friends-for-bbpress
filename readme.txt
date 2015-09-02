@@ -3,10 +3,10 @@ Created by GraemeScott
 
 Contributors: GraemeScott
 Donate link: http://gscodesign.com
-Tags: friends, bbpress
+Tags: wordpress, bbpress, activity, community, forum, forums, friend, friends, networking, network, networks, social, social networking, online
 Requires at least: 3.4
-Tested up to: 4.2.4
-Stable tag: 1.1
+Tested up to: 4.3
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,13 @@ If the user has accepted the request, simply click the ‘Remove Friend’ butto
 * Fixed various bugs
 * Tested on Wordpress 4.2.4
 
+= 1.2 =
+* Renamed all functions to prevent conflicts with other plugins and themes
+
+= 1.3 =
+* Fixed various bugs
+* Tested on Wordpress 4.3
+
 
 == Upgrade Notice ==
 
@@ -64,3 +71,10 @@ If the user has accepted the request, simply click the ‘Remove Friend’ butto
 = 1.1 =
 * Fixed various bugs
 * Tested on Wordpress 4.2.4
+
+= 1.2 =
+* Renamed all functions to prevent conflicts with other plugins and themes
+
+= 1.3 =
+* Fixed various bugs
+* Tested on Wordpress 4.3
